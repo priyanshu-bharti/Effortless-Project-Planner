@@ -1,0 +1,28 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./DB.db"
+}
+
+model apis {
+  id          Int     @id @default(autoincrement())
+  api         String?
+  description String?
+  auth        String?
+  https       Int?
+  cors        String?
+  link        String?
+  category    String?
+}
+
+model resources {
+  resID       String  @id
+  tags        String?
+  tagID       String?
+  name        String?
+  url         String?
+  description String?
+}
