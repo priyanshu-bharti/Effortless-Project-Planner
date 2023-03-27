@@ -3,6 +3,7 @@ import NavList from "../navList/navList";
 import ToggleTheme from "@/components/buttons/toggleTheme";
 import { RiMenu4Line, RiMusic2Line, RiTimerFlashLine } from "react-icons/ri";
 import Image from "next/image";
+import Link from "next/link";
 
 const Navbar = () => {
     return (
@@ -16,7 +17,7 @@ const Navbar = () => {
                 </label>
             </div>
             <div className="flex-1 px-2 mx-2 font-bold text-xl">
-                <div className="flex items-center gap-2">
+                <Link href="/resources" className="flex items-center gap-2">
                     <Image
                         src="/Logo.svg"
                         width={28}
@@ -25,7 +26,7 @@ const Navbar = () => {
                         className=""
                     />
                     Effortless
-                </div>
+                </Link>
             </div>
             <div className="flex-none ">
                 <ul className="btn-group mr-2">

@@ -35,7 +35,12 @@ export const getServerSideProps: GetServerSideProps = async (
     const prisma = new PrismaClient();
     try {
         if (!search) {
-            const count: number = await prisma.apis.count();
+            const count: number = await prisma.apis.count({
+                where: {
+                    category,
+                },
+            });
+
             const totalPages = Math.ceil(count / pageSize);
             const apis = await prisma.apis.findMany({
                 where: {
@@ -54,6 +59,7 @@ export const getServerSideProps: GetServerSideProps = async (
                 },
             },
         });
+
         const totalPages = Math.ceil(count / pageSize);
         const apis = await prisma.apis.findMany({
             where: {
@@ -74,10 +80,12 @@ export const getServerSideProps: GetServerSideProps = async (
 };
 
 const Resources = ({
+    category,
     apis,
     totalPages,
     page,
 }: {
+    category: string;
     apis: ApiData[];
     totalPages: number;
     page: number;
@@ -93,7 +101,7 @@ const Resources = ({
                     <div className="col-span-full grid sm:flex items-center gap-4 w-full">
                         <DropdownMenu />
                         <SearchBar
-                            baseURL="/resources/API/"
+                            baseURL="/resources/API/${}"
                             searchToken={searchToken}
                             setSearchToken={setSearchToken}
                         />
@@ -108,9 +116,12 @@ const Resources = ({
                         </div>
                     )}
                     <Pagination
+                        scrollRef={divScrollRef}
                         page={page}
                         totalPages={totalPages}
-                        baseURL={"/resources/API"}
+                        baseURL={`/resources/API/?category=${encodeURIComponent(
+                            category
+                        )}&`}
                     />
                     <ScrollTopFAB divRef={divScrollRef} />
                 </ThreeColWrapper>

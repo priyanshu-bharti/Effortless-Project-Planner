@@ -108,9 +108,10 @@ const Resources = ({
                         <ResourcesCard key={card.resID} {...card} />
                     ))}
                     <Pagination
+                        scrollRef={divScrollRef}
                         page={page}
                         totalPages={totalPages}
-                        baseURL={`/resources/${tag}`}
+                        baseURL={`/resources/${tag}/?`}
                     />
                     <ScrollTopFAB divRef={divScrollRef} />
                 </ThreeColWrapper>

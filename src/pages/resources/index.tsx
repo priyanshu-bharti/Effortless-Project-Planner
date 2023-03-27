@@ -23,7 +23,7 @@ export const getServerSideProps: GetServerSideProps = async (
 ) => {
     const prisma = new PrismaClient();
     const page = parseInt(context.query.page as string) || 1;
-    const search = context.query.search as string;
+    const search = (context.query.search as string) || "";
 
     const pageSize = 18;
     const skip = (page - 1) * pageSize;
@@ -66,7 +66,7 @@ export const getServerSideProps: GetServerSideProps = async (
             skip,
         });
 
-        return { props: { data: resources, totalPages, page } };
+        return { props: { data: resources, totalPages, page, search } };
     } catch (e) {
         console.error(e);
         return { props: { data: [] } };
@@ -79,7 +79,9 @@ const Resources = ({
     data,
     totalPages,
     page,
+    search,
 }: {
+    search: string;
     data: ResourceData[];
     totalPages: number;
     page: number;
@@ -117,9 +119,14 @@ const Resources = ({
                         </div>
                     )}
                     <Pagination
+                        scrollRef={divScrollRef}
                         page={page}
                         totalPages={totalPages}
-                        baseURL="/resources"
+                        baseURL={
+                            search
+                                ? `/resources/?search=${search}&`
+                                : "/resources/?"
+                        }
                     />
                     <ScrollTopFAB divRef={divScrollRef} />
                 </ThreeColWrapper>
