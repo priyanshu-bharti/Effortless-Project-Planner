@@ -78,7 +78,7 @@ const Resources = ({
     totalPages,
     page,
 }: {
-    apis?: ApiData[];
+    apis: ApiData[];
     totalPages: number;
     page: number;
 }) => {
@@ -98,9 +98,15 @@ const Resources = ({
                             setSearchToken={setSearchToken}
                         />
                     </div>
-                    {apis!.map((card) => (
-                        <ApiCards {...card} key={card.id} />
-                    ))}
+                    {apis.length > 0 ? (
+                        apis!.map((card) => (
+                            <ApiCards {...card} key={card.id} />
+                        ))
+                    ) : (
+                        <div className="col-span-full flex items-center justify-center font-bold text-xl">
+                            No Apis Found! 😕
+                        </div>
+                    )}
                     <Pagination
                         page={page}
                         totalPages={totalPages}

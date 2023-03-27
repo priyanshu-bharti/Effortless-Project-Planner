@@ -9,7 +9,7 @@ const ActionBar = () => {
     const router = useRouter();
 
     return (
-        <ul className="hidden lg:flex menu items-center bg-base-300 w-16 py-2 gap-4 text-xl fixed h-full mt-16 z-10">
+        <ul className="hidden lg:flex flex-col items-center bg-base-300 w-16 text-xl fixed h-full mt-16 z-10">
             {navListData.map((item) => (
                 <ActionBarItem
                     key={item.label}

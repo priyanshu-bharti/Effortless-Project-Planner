@@ -12,20 +12,21 @@ const ActionBarItem = ({
 }) => {
     return (
         <div
-            className={`tooltip tooltip-right font-bold ${
-                active ? "tooltip-accent" : "tooltip-primary"
+            className={`tooltip tooltip-right font-bold w-full aspect-square ${
+                active ? "tooltip-secondary" : "tooltip-primary"
             }`}
             data-tip={label}
         >
-            <li
-                className={`rounded-md transition-colors duration-150 ${
+            <Link
+                href={`/${label.toLowerCase()}`}
+                className={`transition-colors duration-150 flex h-full items-center justify-center ${
                     active
-                        ? "bg-accent text-neutral"
+                        ? "bg-base-200"
                         : "hover:bg-primary hover:text-neutral"
                 }`}
             >
-                <Link href={`/${label.toLowerCase()}`}>{icon}</Link>{" "}
-            </li>
+                {icon}
+            </Link>
         </div>
     );
 };

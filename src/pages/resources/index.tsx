@@ -99,17 +99,23 @@ const Resources = ({
                             setSearchToken={setSearchToken}
                         />
                     </div>
-                    {data.map((card) => (
-                        <ResourcesCard
-                            key={card.resID}
-                            resID={card.resID}
-                            name={card.name}
-                            tags={card.tags}
-                            tagID={card.tagID}
-                            description={card.description}
-                            url={card.url}
-                        />
-                    ))}
+                    {data.length > 0 ? (
+                        data.map((card) => (
+                            <ResourcesCard
+                                key={card.resID}
+                                resID={card.resID}
+                                name={card.name}
+                                tags={card.tags}
+                                tagID={card.tagID}
+                                description={card.description}
+                                url={card.url}
+                            />
+                        ))
+                    ) : (
+                        <div className="col-span-full flex items-center justify-center font-bold text-xl">
+                            No Resources Found! 😕
+                        </div>
+                    )}
                     <Pagination
                         page={page}
                         totalPages={totalPages}
