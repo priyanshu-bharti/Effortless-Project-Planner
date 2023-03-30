@@ -52,7 +52,7 @@ const PlaylistDuration = () => {
 
     return (
         <>
-            <DrawerNavbarLayout scrollRef={divScrollRef}>
+            <DrawerNavbarLayout bg="bg-base-200" scrollRef={divScrollRef}>
                 <ThreeColWrapper sidebarMargin={false}>
                     <div className="col-span-full flex gap-4 items-center">
                         {/* Label Input */}

@@ -6,15 +6,17 @@ import ActionBar from "../nav/actionBar/actionBar";
 const DrawerNavbarLayout = ({
     children,
     scrollRef,
+    bg = "bg-base-100",
 }: {
     children: React.ReactNode;
     scrollRef: React.RefObject<HTMLDivElement>;
+    bg?: "bg-base-100" | "bg-base-200" | "bg-base-300";
 }) => {
     return (
         <div className="drawer">
             <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
             <div
-                className="drawer-content flex flex-col scrollbar-hide"
+                className={`drawer-content flex flex-col scrollbar-hide ${bg}`}
                 ref={scrollRef}
             >
                 {/* Navigation Bar */}

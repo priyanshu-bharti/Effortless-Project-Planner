@@ -8,7 +8,7 @@ const PlaylistRangeCard = ({
     endCounterRef: React.RefObject<HTMLInputElement>;
 }) => {
     return (
-        <div className="card bg-base-200">
+        <div className="card bg-base-300">
             <div className="card-body">
                 <h2 className="card-title">Specify Range (Optional)</h2>
                 <p>

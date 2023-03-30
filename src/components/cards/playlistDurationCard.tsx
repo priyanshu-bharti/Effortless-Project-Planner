@@ -21,7 +21,7 @@ const PlaylistDurationCard = ({ response, start, end }: any) => {
     }
 
     return (
-        <div className="card bg-base-200 border border-base-300 ">
+        <div className="card bg-base-300 border border-base-300 ">
             <div className="card-body">
                 <h2 className="card-title">Playlist Speed Analysis</h2>
                 <div className="form-control">

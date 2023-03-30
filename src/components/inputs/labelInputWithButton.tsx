@@ -26,7 +26,7 @@ const LabelInputWithButton = ({
                     ref={inputRef}
                     type="text"
                     placeholder={placeholder}
-                    className="input input-bordered w-full focus:border-primary focus:ring-primary"
+                    className="input input-bordered border-base-300 w-full focus:border-primary focus:ring-primary"
                 />
                 <button onClick={onButtonClick} className="btn btn-primary">
                     {buttonLabel}

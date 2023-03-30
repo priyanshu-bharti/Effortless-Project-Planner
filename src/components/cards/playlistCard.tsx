@@ -3,7 +3,7 @@ import React from "react";
 
 const PlaylistCard = ({ response, url }: any) => {
     return (
-        <div className="card bg-base-200 border border-base-300 ">
+        <div className="card bg-base-300 border border-base-300 ">
             <figure>
                 <Image
                     width={800}
