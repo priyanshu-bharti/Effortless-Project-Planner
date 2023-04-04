@@ -10,6 +10,9 @@ import Pagination from "@/components/pagination/pagination";
 import ApiCards from "@/components/cards/apiCards";
 import DropdownMenu from "@/components/dropdowns/dropdownMenu";
 import SearchBar from "@/components/inputs/searchBar";
+import dynamic from "next/dynamic";
+import { useRouter } from "next/router";
+import CategoryList from "@/components/aside/categoryList";
 
 export type ApiData = {
     id: number;
@@ -93,10 +96,16 @@ const Resources = ({
     const divScrollRef = useRef<HTMLDivElement>(null);
     const [searchToken, setSearchToken] = useState<string>("");
 
+    const router = useRouter();
+
     return (
         <>
             <DrawerNavbarLayout scrollRef={divScrollRef}>
-                <CategoryBar />
+                <CategoryBar>
+                    {router.route.split("/")[1] === "resources" && (
+                        <CategoryList />
+                    )}
+                </CategoryBar>
                 <ThreeColWrapper>
                     <div className="col-span-full grid sm:flex items-center gap-4 w-full">
                         <DropdownMenu />
@@ -130,4 +139,4 @@ const Resources = ({
     );
 };
 
-export default Resources;
+export default dynamic(() => Promise.resolve(Resources), { ssr: false });

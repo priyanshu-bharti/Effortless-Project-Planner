@@ -9,7 +9,7 @@ const DrawerNavbarLayout = ({
     bg = "bg-base-100",
 }: {
     children: React.ReactNode;
-    scrollRef: React.RefObject<HTMLDivElement>;
+    scrollRef?: React.RefObject<HTMLDivElement>;
     bg?: "bg-base-100" | "bg-base-200" | "bg-base-300";
 }) => {
     return (

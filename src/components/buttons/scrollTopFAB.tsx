@@ -8,7 +8,7 @@ const ScrollTopFAB = ({
 }) => {
     return (
         <div
-            className="tooltip tooltip-primary font-bold tooltip-left bottom-4 right-6 fixed z-10"
+            className="tooltip tooltip-accent font-bold tooltip-left bottom-4 right-6 fixed z-10"
             data-tip="Scroll to Top"
         >
             <button

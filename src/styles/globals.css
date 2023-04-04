@@ -1,21 +1,191 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700&family=Martian+Mono&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* .drawer-content::-webkit-scrollbar {
-    width: .75em;
+:focus-visible {
+    outline-color: #fec89a !important;
+    --tw-ring-color: #fec89a !important;
 }
-.drawer-content::-webkit-scrollbar-track {
-    @apply bg-neutral mt-16
+:focus-visible {
+    outline-color: #fec89a !important;
+    border-color: #fec89a !important;
 }
-.drawer-content::-webkit-scrollbar-thumb {
-    @apply bg-secondary
+
+/* ···· Some Quill Editor Styles ···· */
+
+/* There are here because next js requires us to 
+pass styles.className to our components which isn't 
+possible with react quill */
+
+/* ······· Quill Editor Style ······· */
+.quill {
+    @apply col-span-full border border-base-300 rounded-md;
 }
-.drawer-content::-webkit-scrollbar-thumb:hover {
-    @apply bg-primary
+
+.ql-editor h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    @apply font-bold;
 }
-.drawer-content {
-    scrollbar-color: #f0a6ca #4f518c;
-    scrollbar-width: .75em;
+
+.ql-editor h1,
+.ql-editor h2,
+.ql-editor h3,
+.ql-editor h4,
+.ql-editor h5,
+.ql-editor h6,
+.ql-editor p,
+.ql-editor a {
+    @apply !font-sans;
 }
- */
+
+.ql-editor p {
+    @apply !text-base;
+}
+
+.ql-editor p *[class^="hljs"],
+.ql-editor h1 *[class^="hljs"],
+.ql-editor h2 *[class^="hljs"],
+.ql-editor h3 *[class^="hljs"],
+.ql-editor h4 *[class^="hljs"],
+.ql-editor h5 *[class^="hljs"],
+.ql-editor h6 *[class^="hljs"] {
+    @apply !text-base-content;
+}
+
+/* Both Toolbar and the body */
+.ql-toolbar.ql-snow,
+.ql-container.ql-snow {
+    @apply !border-none !transition-colors !duration-300;
+}
+
+/* Just the toolbar */
+.ql-toolbar {
+    @apply !p-4 !rounded-sm;
+}
+
+/* Formatting options in the tooltip */
+.ql-editor {
+    @apply !prose mx-auto !py-8;
+}
+
+/* Toolbar Tooltip */
+.ql-bubble .ql-tooltip {
+    @apply !rounded-md !mx-8 !shadow-md !bg-neutral;
+}
+
+/* Just the container */
+.ql-container.ql-snow {
+    @apply pt-12 overflow-y-scroll;
+}
+
+/* Placeholder Text */
+.ql-editor.ql-blank::before {
+    @apply !text-base-content !text-opacity-50 !not-italic !font-sans !text-base !mx-auto !py-5 !max-w-[579px] sm:!p-4;
+}
+
+.ql-snow .ql-editor pre.ql-syntax {
+    @apply !text-white !p-4 !rounded-sm !text-sm;
+    font-family: "Martian Mono", monospace !important;
+}
+
+/* 
+.ql-toolbar .ql-base-300 {
+    @apply fill-none stroke-base-300;
+}
+
+.ql-toolbar .ql-fill {
+    @apply fill-base-300 stroke-none;
+}
+
+.ql-toolbar .ql-picker {
+    @apply text-base-300;
+}
+
+.ql-snow .ql-fill,
+.ql-snow .ql-base-300.ql-fill {
+    @apply fill-base-300;
+}
+
+.ql-picker-options {
+    @apply !bg-base-200 !rounded-md !mt-2 !text-base-300 !px-4 !border-2 !border-base-300 !shadow-none font-bold;
+}
+
+.ql-picker-item {
+    @apply last:font-normal;
+}
+
+.ql-toolbar.ql-snow .ql-picker-label {
+    @apply border-none;
+}
+
+.ql-snow .ql-picker.ql-expanded .ql-picker-label {
+    @apply text-primary;
+}
+
+.ql-snow .ql-picker.ql-expanded .ql-picker-label .ql-base-300 {
+    @apply stroke-primary;
+}
+
+.ql-syntax {
+    @apply !text-base-300 !bg-base-200 border-2 border-base-300;
+}
+
+.ql-stroke {
+    @apply !stroke-base-content;
+}
+
+.ql-fill {
+    @apply !stroke-base-content;
+}
+
+.ql-header .ql-picker {
+}
+
+.ql-expanded {
+    @apply !border-none;
+}
+
+.ql-picker-label {
+    @apply !text-base-content;
+}
+
+.ql-picker-item {
+    @apply !text-base-content;
+}
+
+.ql-align .ql-picker .ql-icon-picker .ql-expanded {
+    @apply focus:!outline-primary focus:!ring-primary;
+}
+
+.ql-formats > * {
+    @apply focus:!outline-primary focus:!ring-primary;
+}
+
+.ql-picker-label {
+    @apply focus:!outline-primary focus:!ring-primary;
+}
+.ql-picker-item {
+    @apply focus:!outline-primary focus:!ring-primary;
+}
+
+.ql-active {
+    @apply !bg-base-300 !rounded;
+}
+
+.ql-expanded {
+    @apply !bg-base-300 !rounded;
+}
+
+.ql-picker-options {
+    @apply bg-base-200 border border-base-300;
+}
+.ql-toolbar.ql-snow .ql-picker.ql-expanded .ql-picker-label {
+    @apply !border-none;
+}
+*/

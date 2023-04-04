@@ -7,7 +7,7 @@ import Link from "next/link";
 
 const Navbar = () => {
     return (
-        <nav className="w-full navbar fixed bg-base-300 h-16 z-10">
+        <nav className="w-full navbar fixed bg-base-300 h-16">
             <div className="flex-none lg:hidden">
                 <label
                     htmlFor="my-drawer-3"
@@ -32,9 +32,12 @@ const Navbar = () => {
                 <ul className="btn-group mr-2">
                     {/* <!-- Navbar Buttons --> */}
 
-                    <button className="btn btn-ghost btn-square">
+                    <label
+                        htmlFor="music-player"
+                        className="btn btn-ghost btn-square"
+                    >
                         <RiMusic2Line className="text-xl" />
-                    </button>
+                    </label>
 
                     <button className="btn btn-ghost btn-square">
                         <RiTimerFlashLine className="text-xl" />

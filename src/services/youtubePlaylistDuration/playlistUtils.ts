@@ -24,7 +24,7 @@ export async function getBasicPlaylistInfo(key: string, id: string) {
 }
 
 export function getPlaylistIdFromURL(URL: string) {
-    return URL.split("=").at(1) as string;
+    return URL.split("list=").at(1) as string;
 }
 
 export function getCurrentAPIKey() {

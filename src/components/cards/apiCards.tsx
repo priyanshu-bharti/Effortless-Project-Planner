@@ -1,5 +1,6 @@
 import { ApiData } from "@/pages/resources/API";
 import React from "react";
+import { RiFileCopyLine } from "react-icons/ri";
 
 const ApiCards = ({
     api,
@@ -10,7 +11,7 @@ const ApiCards = ({
     link,
 }: ApiData) => {
     return (
-        <div className="card bg-base-200 transition-colors duration-300 hover:bg-base-300 border border-base-300">
+        <div className="card bg-base-200 transition-colors duration-300 hover:bg-base-300 border border-base-300 relative">
             <div className="card-body px-6 py-8">
                 <h2 className="card-title">{api}</h2>
                 <p>
@@ -43,6 +44,14 @@ const ApiCards = ({
                     </a>
                     <button className="btn btn-primary">Stash This!</button>
                 </div>
+            </div>
+            <div
+                className="tooltip tooltip-accent font-bold tooltip-left right-4 top-4 absolute"
+                data-tip="Copy URL"
+            >
+                <button className="btn btn-square btn-accent btn-sm border border-accent-focus">
+                    <RiFileCopyLine className="text-lg" />
+                </button>
             </div>
         </div>
     );

@@ -2,7 +2,13 @@
 module.exports = {
     content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
     theme: {
-        extend: {},
+        extend: {
+            fontFamily: {
+                sans: "Outfit, Arial, sans-serif",
+                serif: "Gloock, serif",
+                mono: "Martian Mono, monospace",
+            },
+        },
     },
     daisyui: {
         themes: [
