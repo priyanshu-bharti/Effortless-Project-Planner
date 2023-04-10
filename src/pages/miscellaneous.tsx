@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import DrawerNavbarLayout from "@/components/layout/drawerNavbarLayout";
+import {DrawerNavbarLayout} from "@/components";
 
 const Miscellaneous = () => {
     const divScrollRef = useRef<HTMLDivElement>(null);

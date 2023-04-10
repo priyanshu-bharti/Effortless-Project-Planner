@@ -7,7 +7,7 @@ import Link from "next/link";
 
 const Navbar = () => {
     return (
-        <nav className="w-full navbar fixed bg-base-300 h-16">
+        <nav className="w-full navbar fixed bg-base-300 h-16 !z-20">
             <div className="flex-none lg:hidden">
                 <label
                     htmlFor="my-drawer-3"

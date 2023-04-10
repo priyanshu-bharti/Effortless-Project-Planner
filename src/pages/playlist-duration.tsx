@@ -1,10 +1,5 @@
 import React, { useRef, useState } from "react";
-import DrawerNavbarLayout from "@/components/layout/drawerNavbarLayout";
-import LabelInputWithButton from "@/components/inputs/labelInputWithButton";
-import ThreeColWrapper from "@/components/layout/threeColWrapper";
-import PlaylistCard from "@/components/cards/playlistCard";
-import PlaylistDurationCard from "@/components/cards/playlistDurationCard";
-import PlaylistRangeCard from "@/components/cards/playlistRangeCard";
+import {DrawerNavbarLayout,LabelInputWithButton,ThreeColWrapper,PlaylistCard,PlaylistDurationCard,PlaylistRangeCard} from "@/components";
 
 const PlaylistDuration = () => {
     const divScrollRef = useRef<HTMLDivElement>(null);
