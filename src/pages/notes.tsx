@@ -135,7 +135,6 @@ const Notes = () => {
 
     return (
         <>
-            <DrawerNavbarLayout>
                 <CategoryBar>
                     <div className="flex flex-col-reverse gap-2 pb-16">
                         {/* <AsideNotesTile /> */}
@@ -180,7 +179,6 @@ const Notes = () => {
                         <NotesButtonGroup onSave={handleSave} />
                     )}
                 </div>
-            </DrawerNavbarLayout>
         </>
     );
 };

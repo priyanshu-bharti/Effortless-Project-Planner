@@ -9,7 +9,7 @@ import {
 } from "react-icons/ri";
 
 export const navListData = [
-    { icon: <RiPagesLine />, label: "Resources" },
+    { icon:<RiPagesLine/>, label: "Resources" },
     { icon: <RiStackLine />, label: "Flashcards" },
     { icon: <RiMarkdownLine />, label: "Notes" },
     { icon: <RiCheckboxLine />, label: "Routine" },
@@ -17,3 +17,4 @@ export const navListData = [
     { icon: <RiQuestionLine />, label: "Miscellaneous" },
     { icon: <RiSettings2Line />, label: "Settings" },
 ];
+

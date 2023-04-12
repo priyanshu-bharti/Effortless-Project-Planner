@@ -1,13 +1,9 @@
-import React, { useRef } from "react";
-import { DrawerNavbarLayout } from "@/components";
+import React from "react";
 const FlashCards = () => {
-    const divScrollRef = useRef<HTMLDivElement>(null);
-
+    
     return (
         <>
-            <DrawerNavbarLayout scrollRef={divScrollRef}>
-                FlashCards
-            </DrawerNavbarLayout>
+        FlashCards
         </>
     );
 };

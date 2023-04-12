@@ -4,19 +4,21 @@ import React, { useEffect, useState } from "react";
 import { RiStarLine } from "react-icons/ri";
 import ActionBarItem from "./actionBarItem";
 import { useRouter } from "next/router";
+import { drawerNavbarLayoutData } from "@/pages/PagesComponentData";
+import { usePageState } from "@/States/LayoutState";
 
 const ActionBar = () => {
-    const router = useRouter();
-
+    const isActivePage = usePageState((state)=>state.activePage)
     return (
         <ul className="hidden lg:flex flex-col items-center bg-base-300 w-16 text-xl fixed h-full mt-16 z-10">
-            {navListData.map((item) => (
+            {drawerNavbarLayoutData.map((item,index) => (
                 <ActionBarItem
-                    key={item.label}
-                    icon={item.icon}
-                    label={item.label}
+                    key={item.title}
+                    pageIndex={index}
+                    icon={item.sideBarMenuIcon}
+                    label={item.title}
                     active={
-                        router.route.split("/")[1] === item.label.toLowerCase()
+                        index===isActivePage
                     }
                 />
             ))}

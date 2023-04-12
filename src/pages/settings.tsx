@@ -6,9 +6,7 @@ const Settings = () => {
 
     return (
         <>
-            <DrawerNavbarLayout scrollRef={divScrollRef}>
                 Settings
-            </DrawerNavbarLayout>
         </>
     );
 };

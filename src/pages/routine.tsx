@@ -6,9 +6,7 @@ const Routine = () => {
 
     return (
         <>
-            <DrawerNavbarLayout scrollRef={divScrollRef}>
                 Routine
-            </DrawerNavbarLayout>
         </>
     );
 };
